@@ -2,7 +2,7 @@
 // @name     Slashdot Ad-Shield Fix for Chrome (TamperMonkey)
 // @description Use with TamperMonkey in Chrome to prevent the intrusive ad-enfocement that recently appeared on Slashdot
 // @version  2025-01-11
-// @author   Platima. (Original Daniel Perelman - perelman@aweirdimagination.net)
+// @author   Platima
 // @license  MIT
 // @homepage https://github.com/platima/slashdot-ad-fix
 // @source   https://github.com/platima/slashdot-ad-fix/raw/main/slashdot-ad-fix.user.js
