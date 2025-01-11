@@ -1,16 +1,17 @@
-Tested in Chrome with TamperMonkey.
+Tested in Chrome with TamperMonkey. Working as of last commit/update.
 
 ```
 // ==UserScript==
-// @name     Slashdot Ad-Shield Fix for CHrome
-// @version  1.0
+// @name     Slashdot Ad-Shield Fix for Chrome (TamperMonkey)
+// @description Use with TamperMonkey in Chrome to prevent the intrusive ad-enfocement that recently appeared on Slashdot
+// @version  2025-01-11
 // @author   Platima. (Original Daniel Perelman - perelman@aweirdimagination.net)
 // @license  MIT
 // @icon     https://www.google.com/s2/favicons?sz=64&domain=slashdot.org
-// @match    https://*.slashdot.org/*
-// @match    https://slashdot.org/*
-// @grant    none
+// @grant    unsafeWindow
 // @run-at   document-start
+// @match    *://*.slashdot.org/*
+// @match    https://slashdot.org/*
 // ==/UserScript==
 
 (function() {
@@ -24,11 +25,30 @@ Tested in Chrome with TamperMonkey.
             const _querySelectorAll = document.querySelectorAll;
             const _createElement = document.createElement;
 
-            // Override createElement to block iframes
+            // Function to check if an iframe is a full-screen overlay
+            function isOverlayIframe(element) {
+                if (element.tagName !== 'IFRAME') return false;
+                const style = window.getComputedStyle(element);
+                return style.position === 'fixed' &&
+                       style.width === '100vw' &&
+                       style.height === '100vh' &&
+                       style.zIndex === '2147483647';
+            }
+
+            // Override createElement to block problematic iframes
             document.createElement = new Proxy(_createElement, {
                 apply: function(target, thisArg, args) {
                     const element = _createElement.apply(thisArg, args);
                     if (args[0].toLowerCase() === 'iframe') {
+                        // Block setting overlay-style attributes
+                        const originalSetAttribute = element.setAttribute;
+                        element.setAttribute = function(name, value) {
+                            if (name === 'style' && value.includes('100vw') && value.includes('fixed')) {
+                                return;
+                            }
+                            return originalSetAttribute.call(this, name, value);
+                        };
+
                         Object.defineProperty(element, 'src', {
                             set: function(value) {
                                 if (value && value.includes('error-report.com')) {
@@ -45,8 +65,25 @@ Tested in Chrome with TamperMonkey.
                 }
             });
 
-            // Override alert
-            window.alert = function() { return undefined; };
+            // Override alert globally
+            Object.defineProperty(window, 'alert', {
+                value: function() { return undefined; },
+                writable: false,
+                configurable: false
+            });
+
+            // Override confirm to always return false for Ad-Shield messages
+            const _confirm = window.confirm;
+            Object.defineProperty(window, 'confirm', {
+                value: function(message) {
+                    if (message && message.includes('adblockers')) {
+                        return false;
+                    }
+                    return _confirm.apply(this, arguments);
+                },
+                writable: false,
+                configurable: false
+            });
 
             // Override querySelectorAll
             document.querySelectorAll = new Proxy(_querySelectorAll, {
@@ -70,24 +107,46 @@ Tested in Chrome with TamperMonkey.
                 }
             });
 
-            // Remove ad containers
-            function removeAds() {
+            // Remove ads and overlay iframes
+            function cleanupPage() {
+                // Remove ad containers
                 const adElements = document.getElementsByClassName('adwrap');
                 for (let i = adElements.length - 1; i >= 0; i--) {
                     adElements[i].style.display = 'none';
                     adElements[i].innerHTML = '';
                 }
+
+                // Remove overlay iframes and empty iframes
+                const iframes = document.getElementsByTagName('iframe');
+                for (let i = iframes.length - 1; i >= 0; i--) {
+                    const iframe = iframes[i];
+                    if (isOverlayIframe(iframe) ||
+                        !iframe.src ||
+                        iframe.src === '' ||
+                        !iframe.getAttribute('src')) {
+                        iframe.remove();
+                    }
+                }
             }
 
+            // Add CSS to ensure iframes can't take up space
+            const style = document.createElement('style');
+            style.textContent = 'iframe:empty, iframe:not([src]) { display: none !important; height: 0 !important; }';
+            document.head.appendChild(style);
+
             // Run immediately and periodically
-            removeAds();
-            setInterval(removeAds, 1000);
+            cleanupPage();
+            setInterval(cleanupPage, 500);
 
             // Also run when DOM changes
-            const observer = new MutationObserver(removeAds);
+            const observer = new MutationObserver(() => {
+                cleanupPage();
+            });
             observer.observe(document.documentElement || document, {
                 childList: true,
-                subtree: true
+                subtree: true,
+                attributes: true,
+                attributeFilter: ['style']
             });
         })();
     `;
@@ -107,27 +166,5 @@ Tested in Chrome with TamperMonkey.
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', insert);
     }
-
-    // Additional protection: Remove error-report iframes and ad containers
-    const observer = new MutationObserver((mutations) => {
-        for (const mutation of mutations) {
-            if (mutation.addedNodes) {
-                for (const node of mutation.addedNodes) {
-                    if (node.tagName === 'IFRAME' && node.src && node.src.includes('error-report.com')) {
-                        node.remove();
-                    }
-                    if (node.classList && node.classList.contains('adwrap')) {
-                        node.style.display = 'none';
-                        node.innerHTML = '';
-                    }
-                }
-            }
-        }
-    });
-
-    observer.observe(document.documentElement || document, {
-        childList: true,
-        subtree: true
-    });
 })();
 ```
