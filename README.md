@@ -45,7 +45,7 @@ The script works by:
 
 ## Credits
 
-- Original concept by Daniel Perelman (perelman@aweirdimagination.net)
+- Original concept by Daniel Perelman (perelman@aweirdimagination.net / openuserjs.org/scripts/dperelman)
 - Chrome/TamperMonkey adaptation by Platima
 - Licensed under MIT License
 
