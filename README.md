@@ -1,170 +1,66 @@
-Tested in Chrome with TamperMonkey. Working as of last commit/update.
+# Slashdot Ad-Shield Fix for Chrome
 
-```
-// ==UserScript==
-// @name     Slashdot Ad-Shield Fix for Chrome (TamperMonkey)
-// @description Use with TamperMonkey in Chrome to prevent the intrusive ad-enfocement that recently appeared on Slashdot
-// @version  2025-01-11
-// @author   Platima. (Original Daniel Perelman - perelman@aweirdimagination.net)
-// @license  MIT
-// @icon     https://www.google.com/s2/favicons?sz=64&domain=slashdot.org
-// @grant    unsafeWindow
-// @run-at   document-start
-// @match    *://*.slashdot.org/*
-// @match    https://slashdot.org/*
-// ==/UserScript==
+A TamperMonkey script that prevents intrusive ad-enforcement popups and overlay messages on Slashdot while maintaining site functionality.
 
-(function() {
-    'use strict';
+## Overview
 
-    const script = document.createElement('script');
-    script.textContent = `
-        (function() {
-            // Store original methods
-            const _alert = window.alert;
-            const _querySelectorAll = document.querySelectorAll;
-            const _createElement = document.createElement;
+This script is designed to work around Slashdot's Ad-Shield system that can make the site unusable for users with ad blockers or if their network is subject to DNS filtering. It:
+- Prevents intrusive popup messages
+- Blocks overlay iframes that attempt to force users to disable ad blockers
+- Maintains normal site functionality
+- Removes empty ad containers that take up space
+- Works across all Slashdot pages
 
-            // Function to check if an iframe is a full-screen overlay
-            function isOverlayIframe(element) {
-                if (element.tagName !== 'IFRAME') return false;
-                const style = window.getComputedStyle(element);
-                return style.position === 'fixed' &&
-                       style.width === '100vw' &&
-                       style.height === '100vh' &&
-                       style.zIndex === '2147483647';
-            }
+## Installation
 
-            // Override createElement to block problematic iframes
-            document.createElement = new Proxy(_createElement, {
-                apply: function(target, thisArg, args) {
-                    const element = _createElement.apply(thisArg, args);
-                    if (args[0].toLowerCase() === 'iframe') {
-                        // Block setting overlay-style attributes
-                        const originalSetAttribute = element.setAttribute;
-                        element.setAttribute = function(name, value) {
-                            if (name === 'style' && value.includes('100vw') && value.includes('fixed')) {
-                                return;
-                            }
-                            return originalSetAttribute.call(this, name, value);
-                        };
+1. Install the [TamperMonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) extension for Chrome
+2. Click [here](https://github.com/platima/slashdot-ad-fix/raw/main/slashdot-ad-fix.user.js) to install the script (TamperMonkey will automatically detect and prompt you to install it)
+3. Click "Install" in the TamperMonkey prompt
 
-                        Object.defineProperty(element, 'src', {
-                            set: function(value) {
-                                if (value && value.includes('error-report.com')) {
-                                    return;
-                                }
-                                return value;
-                            },
-                            get: function() {
-                                return element.getAttribute('src');
-                            }
-                        });
-                    }
-                    return element;
-                }
-            });
+Alternatively, you can manually install the script:
+1. Open TamperMonkey in Chrome
+2. Click the "Create a new script" button
+3. Copy the entire content of `slashdot-ad-fix.user.js`
+4. Paste it into the editor
+5. Click File > Save or press Ctrl+S
 
-            // Override alert globally
-            Object.defineProperty(window, 'alert', {
-                value: function() { return undefined; },
-                writable: false,
-                configurable: false
-            });
+## Features
 
-            // Override confirm to always return false for Ad-Shield messages
-            const _confirm = window.confirm;
-            Object.defineProperty(window, 'confirm', {
-                value: function(message) {
-                    if (message && message.includes('adblockers')) {
-                        return false;
-                    }
-                    return _confirm.apply(this, arguments);
-                },
-                writable: false,
-                configurable: false
-            });
+- Blocks Ad-Shield's intrusive popup messages
+- Prevents page reloads and redirects
+- Stops style sheet removal attempts
+- Removes empty ad containers
+- Cleans up overlay iframes
+- Works on both www.slashdot.org and slashdot.org
+- Persists across page navigation
 
-            // Override querySelectorAll
-            document.querySelectorAll = new Proxy(_querySelectorAll, {
-                apply: function(target, thisArg, args) {
-                    if (args[0] === "link,style") {
-                        return _querySelectorAll.call(document, "invalid");
-                    }
-                    return _querySelectorAll.apply(thisArg, args);
-                }
-            });
+## Technical Details
 
-            // Block the setInterval that removes styles
-            const _setInterval = window.setInterval;
-            window.setInterval = new Proxy(_setInterval, {
-                apply: function(target, thisArg, args) {
-                    const [fn, delay] = args;
-                    if (delay === 100 && fn.toString().includes('querySelectorAll')) {
-                        return 0;
-                    }
-                    return _setInterval.apply(thisArg, args);
-                }
-            });
+The script works by:
+- Intercepting and neutralising alert() calls
+- Preventing overlay iframe creation
+- Blocking style sheet removal attempts
+- Removing empty ad containers
+- Running at document-start to ensure maximum effectiveness
 
-            // Remove ads and overlay iframes
-            function cleanupPage() {
-                // Remove ad containers
-                const adElements = document.getElementsByClassName('adwrap');
-                for (let i = adElements.length - 1; i >= 0; i--) {
-                    adElements[i].style.display = 'none';
-                    adElements[i].innerHTML = '';
-                }
+## Credits
 
-                // Remove overlay iframes and empty iframes
-                const iframes = document.getElementsByTagName('iframe');
-                for (let i = iframes.length - 1; i >= 0; i--) {
-                    const iframe = iframes[i];
-                    if (isOverlayIframe(iframe) ||
-                        !iframe.src ||
-                        iframe.src === '' ||
-                        !iframe.getAttribute('src')) {
-                        iframe.remove();
-                    }
-                }
-            }
+- Original concept by Daniel Perelman (perelman@aweirdimagination.net)
+- Chrome/TamperMonkey adaptation by Platima
+- Licensed under MIT License
 
-            // Add CSS to ensure iframes can't take up space
-            const style = document.createElement('style');
-            style.textContent = 'iframe:empty, iframe:not([src]) { display: none !important; height: 0 !important; }';
-            document.head.appendChild(style);
+## Contributing
 
-            // Run immediately and periodically
-            cleanupPage();
-            setInterval(cleanupPage, 500);
+Pull requests are welcome! Please feel free to submit issues or improvements.
 
-            // Also run when DOM changes
-            const observer = new MutationObserver(() => {
-                cleanupPage();
-            });
-            observer.observe(document.documentElement || document, {
-                childList: true,
-                subtree: true,
-                attributes: true,
-                attributeFilter: ['style']
-            });
-        })();
-    `;
+## License
 
-    // Insert the script as early as possible
-    const insert = () => {
-        const parent = document.head || document.documentElement;
-        if (parent) {
-            parent.insertBefore(script, parent.firstChild);
-            script.remove();
-        }
-    };
+MIT License - see LICENSE file for details.
 
-    insert();
+## Version History
 
-    // Also try on DOMContentLoaded if needed
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', insert);
-    }
-})();
-```
+- 2025-01-11: Initial Chrome/TamperMonkey release
+  - Adapted from original Firefox/Greasemonkey script
+  - Added support for Chrome
+  - Enhanced iframe and popup blocking
+  - Improved ad container cleanup
