@@ -4,6 +4,8 @@
 // @version  2025-01-11
 // @author   Platima. (Original Daniel Perelman - perelman@aweirdimagination.net)
 // @license  MIT
+// @homepage https://github.com/platima/slashdot-ad-fix
+// @source   https://github.com/platima/slashdot-ad-fix/raw/main/slashdot-ad-fix.user.js
 // @icon     https://www.google.com/s2/favicons?sz=64&domain=slashdot.org
 // @grant    unsafeWindow
 // @run-at   document-start
