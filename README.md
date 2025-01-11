@@ -4,7 +4,7 @@ A TamperMonkey script that prevents intrusive ad-enforcement popups and overlay 
 
 ## Overview
 
-This script is designed to work around Slashdot's Ad-Shield system that can make the site unusable for users with ad blockers or if their network is subject to DNS filtering. It:
+This script is designed to work around Slashdot's Ad-Shield system that can make the site unusable for users with ad blockers or if their network is subject to DNS filtering, resulting in the dreaded html-load.com error, amongst others. It:
 - Prevents intrusive popup messages
 - Blocks overlay iframes that attempt to force users to disable ad blockers
 - Maintains normal site functionality
@@ -45,7 +45,7 @@ The script works by:
 
 ## Credits
 
-- Original concept by Daniel Perelman (perelman@aweirdimagination.net / openuserjs.org/scripts/dperelman)
+- Original concept by Daniel Perelman (perelman@aweirdimagination.net / https://openuserjs.org/scripts/dperelman)
 - Chrome/TamperMonkey adaptation by Platima
 - Licensed under MIT License
 
