@@ -55,17 +55,19 @@ Pull requests are welcome! Please feel free to submit issues or improvements.
 
 ## License
 
-MIT License - see LICENSE file for details.
+MIT License - see `LICENSE` file for details.
 
 ## Version History
+
+- 2025-01-11: Initial Chrome/TamperMonkey release
+  - Enhanced iframe and popup blocking
+  - Enhanced documentation
+  - Added better metadata to script
+  - Added license
+  - Added attribution URL
 
 - 2025-01-08: Initial Chrome/TamperMonkey release
   - Adapted from original Firefox/Greasemonkey script
   - Added support for Chrome
   - Enhanced iframe and popup blocking
   - Improved ad container cleanup
-
-- 2025-01-11: Initial Chrome/TamperMonkey release
-  - Enhanced iframe and popup blocking
-  - Enhanced documentation
-  - Added better metadata to script
