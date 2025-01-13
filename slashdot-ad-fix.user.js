@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name     Slashdot Ad-Shield Fix for Chrome (TamperMonkey)
 // @description Use with TamperMonkey in Chrome to prevent the intrusive ad-enfocement that recently appeared on Slashdot
-// @version  2025-01-11
+// @version  2025-01-13
 // @author   Platima
 // @license  MIT
 // @homepage https://github.com/platima/slashdot-ad-fix
@@ -76,7 +76,7 @@
             Object.defineProperty(window, 'confirm', {
                 value: function(message) {
                     if (message && message.includes('adblockers')) {
-                        return false;
+                        throw Error("Ad-Shield used confirm(). Throwing error to stop execution.");
                     }
                     return _confirm.apply(this, arguments);
                 },
