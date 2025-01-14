@@ -71,6 +71,12 @@ MIT License - see `LICENSE` file for details.
 
 ## Version History
 
+_Note this may not always be up to date, but the commit history is ☺_
+
+- 2025-01-15: Added issue template and troubleshooting guide.
+
+- 2025-01-13: DPerelman added a fix for the alert blocking
+
 - 2025-01-11: Initial Chrome/TamperMonkey release
   - Enhanced iframe and popup blocking
   - Enhanced documentation
