@@ -2,6 +2,8 @@
 
 A TamperMonkey script that prevents intrusive ad-enforcement popups and overlay messages on Slashdot while maintaining site functionality.
 
+**NOTE:** This is specifically tested and working with Chrome on Windows, and with TamperMonkey. It has also been tested with uBlock Origin running with no issues. It _may_ work in Firefox, and it _should_ work on macOS, but this is untested. If you are having issues, please see [Troubleshooting].
+
 ## Overview
 
 This script is designed to work around Slashdot's Ad-Shield system that can make the site unusable for users with ad blockers or if their network is subject to DNS filtering, resulting in the dreaded html-load.com error, amongst others. It:
@@ -42,6 +44,16 @@ The script works by:
 - Blocking style sheet removal attempts
 - Removing empty ad containers
 - Running at document-start to ensure maximum effectiveness
+
+## Troubleshooting
+_**Last Tested Working:** 2025-01-15_
+
+1. Ensure that the script is loading when you visit /. by observing the red '1' on the TamperMonkey icon, and click it to confirm the script is active [as shown here](example.png)
+2. Make sure you're using Chrome with the TamperMonkey extension. Firefox is an unknown, as is GreaseMonkey.
+3. Clear your browsers cache. Alternatively enable TamperMonkey to run in Incognito Mode and open /. in that.
+4. Ensure no conflicting add-ons are running. Other addons like running multiple scripts may interfere with the functionality.
+5. Remove and re-install the extension and the script. This is just in case TamperMonkey is not functioning correctly or the script needs to be updated.
+6. Lodge an issue using this template (https://github.com/platima/slashdot-ad-fix/issues/new?labels=bug&template=bug_report.md&title=%5BBUG%5D).
 
 ## Credits
 
