@@ -48,12 +48,12 @@ The script works by:
 ## Troubleshooting
 _**Last Tested Working:** 2025-01-15_
 
-1. Ensure that the script is loading when you visit /. by observing the red '1' on the TamperMonkey icon, and click it to confirm the script is active [as shown here](example.png)
+1. Ensure that the script is loading when you visit /. by observing the red '1' on the TamperMonkey icon, and click it to confirm the script is active [as shown here](Example.png).
 2. Make sure you're using Chrome with the TamperMonkey extension. Firefox is an unknown, as is GreaseMonkey.
 3. Clear your browsers cache. Alternatively enable TamperMonkey to run in Incognito Mode and open /. in that.
 4. Ensure no conflicting add-ons are running. Other addons like running multiple scripts may interfere with the functionality.
 5. Remove and re-install the extension and the script. This is just in case TamperMonkey is not functioning correctly or the script needs to be updated.
-6. Lodge an issue using this template (https://github.com/platima/slashdot-ad-fix/issues/new?labels=bug&template=bug_report.md&title=%5BBUG%5D).
+6. Lodge an issue [using this template](https://github.com/platima/slashdot-ad-fix/issues/new?labels=bug&template=bug_report.md&title=%5BBUG%5D).
 
 ## Credits
 
