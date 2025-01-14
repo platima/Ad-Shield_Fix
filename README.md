@@ -2,18 +2,18 @@
 
 A TamperMonkey script that prevents intrusive ad-enforcement popups and overlay messages on Slashdot while maintaining site functionality.
 
-**NOTE:** This is specifically tested and working with Chrome on Windows, and with TamperMonkey. It has also been tested with uBlock Origin running with no issues. It *may* work in Firefox, and it *should* work on macOS, but this is untested. If you are having issues, please see [Troubleshooting](#troubleshooting).
+**NOTE:** This is specifically tested and working with Chrome on Windows, and with TamperMonkey. It has also been tested with uBlock Origin running with no issues. It *may* work in Firefox, and it *should* work on macOS, but this is untested. If you are having issues, please see [Troubleshooting](#-troubleshooting).
 
 ## 📋 Table of Contents
-- [Overview](#overview)
-- [Installation](#installation)
-- [Features](#features)
-- [Technical Details](#technical-details)
-- [Troubleshooting](#troubleshooting)
-- [Credits](#credits)
-- [Contributing](#contributing)
-- [License](#license)
-- [Version History](#version-history)
+- [Overview](#-overview)
+- [Installation](#-installation)
+- [Features](#-features)
+- [Technical Details](#-technical-details)
+- [Troubleshooting](#-troubleshooting)
+- [Credits](#-credits)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Version History](#-version-history)
 
 ## 🎯 Overview
 This script is designed to work around Slashdot's Ad-Shield system that can make the site unusable for users with ad blockers or if their network is subject to DNS filtering, resulting in the dreaded html-load.com error, amongst others. 
