@@ -70,7 +70,7 @@ The script implements several protective measures:
 ## 👥 Credits
 - Original concept by Daniel Perelman (perelman@aweirdimagination.net / https://openuserjs.org/scripts/dperelman)
 - Chrome/TamperMonkey adaptation by Platima
-- Licensed under Apache 2.0 License
+- Licensed under MIT License
 
 ## 🤝 Contributing
 Pull requests are welcome! Please feel free to submit issues or improvements.
