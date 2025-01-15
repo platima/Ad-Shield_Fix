@@ -53,14 +53,14 @@ The script implements several protective measures:
 - Removing empty ad containers
 - Running at document-start to ensure maximum effectiveness
 
-## 🧪 Zested Combinations
+## 🧪 Tested Combinations
 
 - Windows 10 x64
- - Google Chrome 131 + TamperMonkey: ✅
- - Google Chrome 131 + uBlock Origin + TamperMonkey: ✅
- - Microsoft Edge 131 + TamperMonkey: ✅
- - Microsoft Edge 131 + uBlock Origin + TamperMonkey: ✅
- - Firefox + GreaseMonkey TBC
+  - Google Chrome 131 + TamperMonkey: ✅
+  - Google Chrome 131 + uBlock Origin + TamperMonkey: ✅
+  - Microsoft Edge 131 + TamperMonkey: ✅
+  - Microsoft Edge 131 + uBlock Origin + TamperMonkey: ✅
+  - Firefox 134 + GreaseMonkey: ✅
 
 ## 🔍 Troubleshooting
 ***Last Tested Working:** 2025-01-15*
@@ -94,6 +94,8 @@ MIT License - see `LICENSE` file for details.
 *Note: This may not always be up to date, but the commit history is ☺*
 
 ### 2025
+- **2025-01-16**
+  - Confirmed Firefox works (using the same fault on j-cast.com)
 - **2025-01-15**
   - Added issue template and troubleshooting guide
   - Added additional installation instruction about Developer Mode
