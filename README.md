@@ -2,7 +2,7 @@
 
 A TamperMonkey script that prevents intrusive ad-enforcement popups and overlay messages on Slashdot while maintaining site functionality.
 
-**NOTE:** This is specifically tested and working with Chrome on Windows, and with TamperMonkey. It has also been tested with uBlock Origin running with no issues. It *may* work in Firefox, and it *should* work on macOS, but this is untested. If you are having issues, please see [Troubleshooting](#-troubleshooting).
+**NOTE:** This is specifically tested and working on Windows. It *should* work on macOS, but this is untested. If you are having issues, please see [Troubleshooting](#-troubleshooting).
 
 ## 📋 Table of Contents
 - [Overview](#-overview)
