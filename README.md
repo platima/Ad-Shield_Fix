@@ -56,11 +56,11 @@ The script implements several protective measures:
 ## 🧪 Tested Combinations
 
 - Windows 10 x64
-  - Google Chrome 131 + TamperMonkey: ✅
-  - Google Chrome 131 + uBlock Origin + TamperMonkey: ✅
-  - Microsoft Edge 131 + TamperMonkey: ✅
-  - Microsoft Edge 131 + uBlock Origin + TamperMonkey: ✅
-  - Firefox 134 + GreaseMonkey: ✅
+  - ✅ Google Chrome 131 + TamperMonkey
+  - ✅ Google Chrome 131 + uBlock Origin + TamperMonkey
+  - ✅ Microsoft Edge 131 + TamperMonkey
+  - ✅ Microsoft Edge 131 + uBlock Origin + TamperMonkey
+  - ✅ Firefox 134 + GreaseMonkey
 
 ## 🔍 Troubleshooting
 ***Last Tested Working:** 2025-01-15*
