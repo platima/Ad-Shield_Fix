@@ -10,6 +10,7 @@ A TamperMonkey script that prevents intrusive ad-enforcement popups and overlay 
 - [Features](#-features)
 - [Technical Details](#-technical-details)
 - [Tested Combinations](#-tested-combinations)
+- [Other Domains](#-other-domains)
 - [Troubleshooting](#-troubleshooting)
 - [Credits](#-credits)
 - [Contributing](#-contributing)
@@ -62,8 +63,17 @@ The script implements several protective measures:
   - ✅ Microsoft Edge 131 + uBlock Origin + TamperMonkey
   - ✅ Firefox 134 + GreaseMonkey
 
+## 🌐 Other Domains
+Other domains that have been seen to have this issue related to html-load.com and the error dialog "This page could not be loaded properly due to incorect [snip]" referring to ht<span>tps://</span>report.error-report.com (catching keywords for people scouring the internet here!):
+
+- j-cast.com
+- timesofindia.indiatimes.com (external confirmation)
+
+For the script to work with these, you must add more `@match` directives, such as
+`@match https://j-cast.com/*`
+
 ## 🔍 Troubleshooting
-***Last Tested Working:** 2025-01-15*
+***Last Tested Working:** 2025-01-16*
 
 1. Ensure that the script is loading when you visit Slashdot by observing the red '1' on the TamperMonkey icon, and click it to confirm the script is active [as shown here](Example.png).
 2. Ensure that you have [enabled Developer Mode](https://www.tampermonkey.net/faq.php#Q209).
@@ -88,14 +98,16 @@ The script implements several protective measures:
 Pull requests are welcome! Please feel free to submit issues or improvements.
 
 ## 📄 License
-MIT License - see `LICENSE` file for details.
+MIT License - see [LICENSE] file for details.
 
 ## 📅 Version History
-*Note: This may not always be up to date, but the commit history is ☺*
 
 ### 2025
 - **2025-01-16**
   - Confirmed Firefox works (using the same fault on j-cast.com)
+  - Added information about other domains and added instructions
+  - Updated last-tested date
+  - Updated header warning re OS
 - **2025-01-15**
   - Added issue template and troubleshooting guide
   - Added additional installation instruction about Developer Mode
