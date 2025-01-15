@@ -9,6 +9,7 @@ A TamperMonkey script that prevents intrusive ad-enforcement popups and overlay 
 - [Installation](#-installation)
 - [Features](#-features)
 - [Technical Details](#-technical-details)
+- [Tested Combinations](#-tested-combinations)
 - [Troubleshooting](#-troubleshooting)
 - [Credits](#-credits)
 - [Contributing](#-contributing)
@@ -20,9 +21,10 @@ This script is designed to work around Slashdot's Ad-Shield system that can make
 
 ## 💾 Installation
 ### Automatic Installation
-1. Install the [TamperMonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) extension for Chrome
-2. Click [here](https://github.com/platima/slashdot-ad-fix/raw/main/slashdot-ad-fix.user.js) to install the script (TamperMonkey will automatically detect and prompt you to install it)
-3. Click "Install" in the TamperMonkey prompt
+1. Install the [TamperMonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) extension for Chrome if you have not already
+2. Enable [Developer Mode](https://www.tampermonkey.net/faq.php#Q209) in TamperMonkey. This is required for userscripts with Chromium Manifest V3 updates
+3. Click [here](https://github.com/platima/slashdot-ad-fix/raw/main/slashdot-ad-fix.user.js) to install the script (TamperMonkey will automatically detect and prompt you to install it)
+4. Click "Install" in the TamperMonkey prompt
 
 ### Manual Installation
 1. Open TamperMonkey in Chrome
@@ -51,21 +53,31 @@ The script implements several protective measures:
 - Removing empty ad containers
 - Running at document-start to ensure maximum effectiveness
 
+## 🧪 Zested Combinations
+
+- Windows 10 x64
+ - Google Chrome 131 + TamperMonkey: ✅
+ - Google Chrome 131 + uBlock Origin + TamperMonkey: ✅
+ - Microsoft Edge 131 + TamperMonkey: ✅
+ - Microsoft Edge 131 + uBlock Origin + TamperMonkey: ✅
+ - Firefox + GreaseMonkey TBC
+
 ## 🔍 Troubleshooting
 ***Last Tested Working:** 2025-01-15*
 
 1. Ensure that the script is loading when you visit Slashdot by observing the red '1' on the TamperMonkey icon, and click it to confirm the script is active [as shown here](Example.png).
-2. Make sure you're using Chrome with the TamperMonkey extension. Firefox is an unknown, as is GreaseMonkey.
-3. Clear your browser's cache and cookies. Alternatively, enable TamperMonkey to run in Incognito Mode and open Slashdot in that mode.
-4. Ensure no conflicting add-ons are running. Other addons or multiple scripts may interfere with the functionality.
-5. Check your Chrome version is up to date (Settings > Help > About Google Chrome).
-6. Verify that JavaScript is enabled in your browser settings.
-7. Try disabling other extensions temporarily to identify any conflicts.
-8. Check if the issue persists in a new Chrome profile (Chrome Menu > Add Profile).
-9. Ensure your system's date and time are set correctly, as this might affect script execution.
-10. Remove and re-install the extension and the script. This is just in case TamperMonkey is not functioning correctly or the script needs to be updated.
-11. If using a work or school computer, check with your IT department about potential network restrictions.
-12. Lodge an issue [using this template](https://github.com/platima/slashdot-ad-fix/issues/new?labels=bug&template=bug_report.md&title=%5BBUG%5D).
+2. Ensure that you have [enabled Developer Mode](https://www.tampermonkey.net/faq.php#Q209).
+3. Make sure you're using Chrome with the TamperMonkey extension. Firefox is an unknown, as is GreaseMonkey.
+4. Clear your browser's cache and cookies. Alternatively, enable TamperMonkey to run in Incognito Mode and open Slashdot in that mode.
+5. Ensure no conflicting add-ons are running. Other addons or multiple scripts may interfere with the functionality.
+6. Check your Chrome version is up to date (Settings > Help > About Google Chrome).
+7. Verify that JavaScript is enabled in your browser settings.
+8. Try disabling other extensions temporarily to identify any conflicts.
+9. Check if the issue persists in a new Chrome profile (Chrome Menu > Add Profile).
+10. Ensure your system's date and time are set correctly, as this might affect script execution.
+11. Remove and re-install the extension and the script. This is just in case TamperMonkey is not functioning correctly or the script needs to be updated.
+12. If using a work or school computer, check with your IT department about potential network restrictions.
+13. Lodge an issue [using this template](https://github.com/platima/slashdot-ad-fix/issues/new?labels=bug&template=bug_report.md&title=%5BBUG%5D).
 
 ## 👥 Credits
 - Original concept by Daniel Perelman (perelman@aweirdimagination.net / https://openuserjs.org/scripts/dperelman)
