@@ -96,7 +96,10 @@ MIT License - see `LICENSE` file for details.
 ### 2025
 - **2025-01-15**
   - Added issue template and troubleshooting guide
-  - Refactored README.md
+  - Added additional installation instruction about Developer Mode
+  - Added tested combinations
+  - Refactored README.md in general
+  - Improved code reliability, performance and cleanliness
 - **2025-01-13**
   - DPerelman added a fix for the alert blocking
 - **2025-01-11**
