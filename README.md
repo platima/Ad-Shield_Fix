@@ -1,6 +1,6 @@
 # 🛡️ Slashdot Ad-Shield Fix for Chrome
 
-A TamperMonkey script that prevents intrusive ad-enforcement popups and overlay messages on Slashdot while maintaining site functionality.
+A Tampermonkey script that prevents intrusive ad-enforcement popups and overlay messages on Slashdot while maintaining site functionality.
 
 **NOTE:** This is specifically tested and working on Windows. It *should* work on macOS, but this is untested. If you are having issues, please see [Troubleshooting](#-troubleshooting).
 
@@ -22,13 +22,13 @@ This script is designed to work around Slashdot's Ad-Shield system that can make
 
 ## 💾 Installation
 ### Automatic Installation
-1. Install the [TamperMonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) extension for Chrome if you have not already
-2. Enable [Developer Mode](https://www.tampermonkey.net/faq.php#Q209) in TamperMonkey. This is required for userscripts with Chromium Manifest V3 updates
-3. Click [here](https://github.com/platima/slashdot-ad-fix/raw/main/slashdot-ad-fix.user.js) to install the script (TamperMonkey will automatically detect and prompt you to install it)
-4. Click "Install" in the TamperMonkey prompt
+1. Install the [Tampermonkey](https://chrome.google.com/webstore/detail/Tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) extension for Chrome if you have not already
+2. Enable [Developer Mode](https://www.Tampermonkey.net/faq.php#Q209) in Tampermonkey. This is required for userscripts with Chromium Manifest V3 updates
+3. Click [here](https://github.com/platima/slashdot-ad-fix/raw/main/slashdot-ad-fix.user.js) to install the script (Tampermonkey will automatically detect and prompt you to install it)
+4. Click "Install" in the Tampermonkey prompt
 
 ### Manual Installation
-1. Open TamperMonkey in Chrome
+1. Open Tampermonkey in Chrome
 2. Click the "Create a new script" button
 3. Copy the entire content of `slashdot-ad-fix.user.js`
 4. Paste it into the editor
@@ -56,12 +56,19 @@ The script implements several protective measures:
 
 ## 🧪 Tested Combinations
 
-- Windows 10 x64
-  - ✅ Google Chrome 131 + TamperMonkey
-  - ✅ Google Chrome 131 + uBlock Origin + TamperMonkey
-  - ✅ Microsoft Edge 131 + TamperMonkey
-  - ✅ Microsoft Edge 131 + uBlock Origin + TamperMonkey
+- Windows 10 - x64
+  - ✅ Google Chrome 131 + Tampermonkey
+  - ✅ Google Chrome 131 + uBlock Origin + Tampermonkey
+  - ✅ Microsoft Edge 131 + Tampermonkey
+  - ✅ Microsoft Edge 131 + uBlock Origin + Tampermonkey
   - ✅ Firefox 134 + GreaseMonkey
+- macOS Monterey - Intel _(not that macOS version should matter)_
+  - ✅ Chrome 132 + Tampermonkey
+  - ✅ Chrome 132 + uBlock Origin + Tampermonkey
+  - ✖ Firefox - Could not reproduce the issue even manually injecting loader.min.js and calling `asload()`
+- Ubuntu 24.04.1 LTS - x64
+  - ✅ Firefox 133 + GreaseMonkey
+  - ✅ Firefox 133 + uBlock Origin + GreaseMonkey
 
 ## 🌐 Other Domains
 Other domains that have been seen to have this issue related to html-load.com and the error dialog "This page could not be loaded properly due to incorect [snip]" referring to ht<span>tps://</span>report.error-report.com (catching keywords for people scouring the internet here!):
@@ -73,25 +80,25 @@ For the script to work with these, you must add more `@match` directives, such a
 `@match https://j-cast.com/*`
 
 ## 🔍 Troubleshooting
-***Last Tested Working:** 2025-01-16*
+***Last Tested Working:** 2025-01-20*
 
-1. Ensure that the script is loading when you visit Slashdot by observing the red '1' on the TamperMonkey icon, and click it to confirm the script is active [as shown here](Example.png).
-2. Ensure that you have [enabled Developer Mode](https://www.tampermonkey.net/faq.php#Q209).
-3. Make sure you're using Chrome with the TamperMonkey extension. Firefox is an unknown, as is GreaseMonkey.
-4. Clear your browser's cache and cookies. Alternatively, enable TamperMonkey to run in Incognito Mode and open Slashdot in that mode.
+1. Ensure that the script is loading when you visit Slashdot by observing the red '1' on the Tampermonkey icon, and click it to confirm the script is active [as shown here](Example.png).
+2. Ensure that you have [enabled Developer Mode](https://www.Tampermonkey.net/faq.php#Q209).
+3. Make sure you're using Chrome with the Tampermonkey extension. Firefox is an unknown, as is GreaseMonkey.
+4. Clear your browser's cache and cookies. Alternatively, enable Tampermonkey to run in Incognito Mode and open Slashdot in that mode.
 5. Ensure no conflicting add-ons are running. Other addons or multiple scripts may interfere with the functionality.
 6. Check your Chrome version is up to date (Settings > Help > About Google Chrome).
 7. Verify that JavaScript is enabled in your browser settings.
 8. Try disabling other extensions temporarily to identify any conflicts.
 9. Check if the issue persists in a new Chrome profile (Chrome Menu > Add Profile).
 10. Ensure your system's date and time are set correctly, as this might affect script execution.
-11. Remove and re-install the extension and the script. This is just in case TamperMonkey is not functioning correctly or the script needs to be updated.
+11. Remove and re-install the extension and the script. This is just in case Tampermonkey is not functioning correctly or the script needs to be updated.
 12. If using a work or school computer, check with your IT department about potential network restrictions.
 13. Lodge an issue [using this template](https://github.com/platima/slashdot-ad-fix/issues/new?labels=bug&template=bug_report.md&title=%5BBUG%5D).
 
 ## 👥 Credits
 - Original concept by Daniel Perelman (perelman@aweirdimagination.net / https://openuserjs.org/scripts/dperelman)
-- Chrome/TamperMonkey adaptation by Platima
+- Chrome/Tampermonkey adaptation by Platima
 - Licensed under MIT License
 
 ## 🤝 Contributing
@@ -117,14 +124,14 @@ MIT License - see [LICENSE] file for details.
 - **2025-01-13**
   - DPerelman added a fix for the alert blocking
 - **2025-01-11**
-  - Initial Chrome/TamperMonkey release
+  - Initial Chrome/Tampermonkey release
   - Enhanced iframe and popup blocking
   - Enhanced documentation
   - Added better metadata to script
   - Added licence
   - Added attribution URL
 - **2025-01-08**
-  - Initial Chrome/TamperMonkey release
+  - Initial Chrome/Tampermonkey release
   - Adapted from original Firefox/Greasemonkey script
   - Added support for Chrome
   - Enhanced iframe and popup blocking
