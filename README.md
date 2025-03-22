@@ -75,6 +75,7 @@ Other domains that have been seen to have this issue related to html-load.com an
 
 - j-cast.com
 - timesofindia.indiatimes.com (external confirmation)
+- picrew.me (external confirmation)
 
 For the script to work with these, you must add more `@match` directives, such as
 `@match https://j-cast.com/*`
