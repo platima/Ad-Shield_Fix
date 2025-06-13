@@ -1,3 +1,5 @@
+<img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=platima.slashdotadfix" height="20" />
+
 # 🛡️ Slashdot Ad-Shield Fix for Chrome
 
 A Tampermonkey script that prevents intrusive ad-enforcement popups and overlay messages on Slashdot while maintaining site functionality.
