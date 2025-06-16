@@ -26,13 +26,13 @@ This script is designed to work around Slashdot's Ad-Shield system that can make
 ### Automatic Installation
 1. Install the [Tampermonkey](https://chrome.google.com/webstore/detail/Tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) extension for Chrome if you have not already
 2. Enable [Developer Mode](https://www.Tampermonkey.net/faq.php#Q209) in Tampermonkey. This is required for userscripts with Chromium Manifest V3 updates
-3. Click [here](https://github.com/platima/slashdot-ad-fix/raw/main/slashdot-ad-fix.user.js) to install the script (Tampermonkey will automatically detect and prompt you to install it)
+3. Click [here](https://github.com/platima/slashdot-ad-fix/raw/main/ad-shield-fix.user.js) to install the script (Tampermonkey will automatically detect and prompt you to install it)
 4. Click "Install" in the Tampermonkey prompt
 
 ### Manual Installation
 1. Open Tampermonkey in Chrome
 2. Click the "Create a new script" button
-3. Copy the entire content of `slashdot-ad-fix.user.js`
+3. Copy the entire content of `ad-shield-fix.user.js`
 4. Paste it into the editor
 5. Click File > Save or press Ctrl+S
 
@@ -83,7 +83,7 @@ For the script to work with these, you must add more `@match` directives, such a
 `@match https://j-cast.com/*`
 
 ## 🔍 Troubleshooting
-***Last Tested Working:** 2025-01-20*
+***Last Tested Working:** 2025-06-16*
 
 1. Ensure that the script is loading when you visit Slashdot by observing the red '1' on the Tampermonkey icon, and click it to confirm the script is active [as shown here](Example.png).
 2. Ensure that you have [enabled Developer Mode](https://www.Tampermonkey.net/faq.php#Q209).
@@ -100,19 +100,24 @@ For the script to work with these, you must add more `@match` directives, such a
 13. Lodge an issue [using this template](https://github.com/platima/slashdot-ad-fix/issues/new?labels=bug&template=bug_report.md&title=%5BBUG%5D).
 
 ## 👥 Credits
-- Original concept by Daniel Perelman (perelman@aweirdimagination.net / https://openuserjs.org/scripts/dperelman)
+- Original concept by [Daniel Perelman](https://github.com/dperelman) (perelman@aweirdimagination.net / https://openuserjs.org/scripts/dperelman)
 - Chrome/Tampermonkey adaptation by Platima
+- Verified functional on SourceForge and adapted by [@mpql](https://github.com/mpql)
 - Licensed under MIT License
 
 ## 🤝 Contributing
 Pull requests are welcome! Please feel free to submit issues or improvements.
 
 ## 📄 License
-MIT License - see [LICENSE] file for details.
+MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 📅 Version History
 
 ### 2025
+- **2025-06-16**
+  - Accepted PR #5 by [@mpql](https://github.com/mpql) to add SourceForge
+  - This included renaming the file to make it more generic / applicable
+  - Updated README
 - **2025-01-16**
   - Confirmed Firefox works (using the same fault on j-cast.com)
   - Added information about other domains and added instructions
