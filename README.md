@@ -1,8 +1,8 @@
 <img align="right" src="https://visitor-badge.laobi.icu/badge?page_id=platima.slashdotadfix" height="20" />
 
-# 🛡️ Slashdot Ad-Shield Fix for Chrome
+# 🛡️ Ad-Shield Fix for Chrome
 
-A Tampermonkey script that prevents intrusive ad-enforcement popups and overlay messages on Slashdot while maintaining site functionality.
+A Tampermonkey script that prevents intrusive ad-enforcement popups and overlay messages on Slashdot and SourceForge while maintaining site functionality.
 
 **NOTE:** This is specifically tested and working on Windows. It *should* work on macOS, but this is untested. If you are having issues, please see [Troubleshooting](#-troubleshooting).
 
@@ -20,7 +20,7 @@ A Tampermonkey script that prevents intrusive ad-enforcement popups and overlay 
 - [Version History](#-version-history)
 
 ## 🎯 Overview
-This script is designed to work around Slashdot's Ad-Shield system that can make the site unusable for users with ad blockers or if their network is subject to DNS filtering, resulting in the dreaded html-load.com error, amongst others. 
+This script is designed to work around the Ad-Shield system that can make sites like SlashDot and SourceForge unusable for users with ad blockers or if their network is subject to DNS filtering, resulting in the dreaded html-load.com error, amongst others. 
 
 ## 💾 Installation
 ### Automatic Installation
@@ -45,6 +45,7 @@ The script provides comprehensive protection against intrusive advertising eleme
 - Removes empty ad containers
 - Cleans up overlay iframes
 - Works on both www.slashdot.org and slashdot.org
+- Works on both www.sourceforge.net and sourceforge.net
 - Persists across page navigation
 
 ## 🔧 Technical Details
@@ -85,10 +86,10 @@ For the script to work with these, you must add more `@match` directives, such a
 ## 🔍 Troubleshooting
 ***Last Tested Working:** 2025-06-16*
 
-1. Ensure that the script is loading when you visit Slashdot by observing the red '1' on the Tampermonkey icon, and click it to confirm the script is active [as shown here](Example.png).
+1. Ensure that the script is loading when you visit Slashdot or SourceForge by observing the red '1' on the Tampermonkey icon, and click it to confirm the script is active [as shown here](Example.png).
 2. Ensure that you have [enabled Developer Mode](https://www.Tampermonkey.net/faq.php#Q209).
 3. Make sure you're using Chrome with the Tampermonkey extension. Firefox is an unknown, as is GreaseMonkey.
-4. Clear your browser's cache and cookies. Alternatively, enable Tampermonkey to run in Incognito Mode and open Slashdot in that mode.
+4. Clear your browser's cache and cookies. Alternatively, enable Tampermonkey to run in Incognito Mode and open Slashdot or SourceForge in that mode.
 5. Ensure no conflicting add-ons are running. Other addons or multiple scripts may interfere with the functionality.
 6. Check your Chrome version is up to date (Settings > Help > About Google Chrome).
 7. Verify that JavaScript is enabled in your browser settings.
