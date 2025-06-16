@@ -146,4 +146,4 @@ MIT License - see [LICENSE](LICENSE) file for details.
   - Improved ad container cleanup
 
 ---
-*🔄 Last updated: 15 January 2025*
+*🔄 Last updated: 16 June 2025*
