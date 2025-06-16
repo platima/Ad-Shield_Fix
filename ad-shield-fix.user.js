@@ -12,6 +12,8 @@
 // @run-at   document-start
 // @match    *://*.slashdot.org/*
 // @match    https://slashdot.org/*
+// @match    *://*.sourceforge.net/*
+// @match    https://sourceforge.net/*
 // ==/UserScript==
 
 (function() {
