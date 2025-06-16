@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name     Slashdot Ad-Shield Fix for Chrome (TamperMonkey)
-// @description Use with TamperMonkey in Chrome to prevent the intrusive ad-enfocement that recently appeared on Slashdot
+// @name     Ad-Shield Fix for Chrome (TamperMonkey)
+// @description Use with TamperMonkey in Chrome to prevent the intrusive ad-enfocement that recently appeared on e.g.Slashdot, SourceForge
 // @version  2025-01-15
 // @author   Platima
 // @license  MIT
 // @homepage https://github.com/platima/slashdot-ad-fix
-// @source   https://github.com/platima/slashdot-ad-fix/raw/main/slashdot-ad-fix.user.js
+// @source   https://github.com/platima/slashdot-ad-fix/raw/main/ad-shield-fix.user.js
 // @icon     https://www.google.com/s2/favicons?sz=64&domain=slashdot.org
 // @supportURL https://github.com/platima/slashdot-ad-fix/issues/new?assignees=platima&labels=bug&projects=&template=bug_report.md&title=%5BBUG%5D
 // @grant    unsafeWindow
