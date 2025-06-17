@@ -2,7 +2,7 @@
 
 # 🛡️ Ad-Shield Fix for Chrome
 
-A Tampermonkey script that prevents intrusive ad-enforcement popups and overlay messages on Slashdot and SourceForge while maintaining site functionality.
+A Tampermonkey script that prevents intrusive ad-enforcement popups and overlay messages on e.g. Slashdot and SourceForge while maintaining site functionality.
 
 **NOTE:** This is specifically tested and working on Windows. It *should* work on macOS, but this is untested. If you are having issues, please see [Troubleshooting](#-troubleshooting).
 
@@ -26,7 +26,7 @@ This script is designed to work around the Ad-Shield system that can make sites 
 ### Automatic Installation
 1. Install the [Tampermonkey](https://chrome.google.com/webstore/detail/Tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) extension for Chrome if you have not already
 2. Enable [Developer Mode](https://www.Tampermonkey.net/faq.php#Q209) in Tampermonkey. This is required for userscripts with Chromium Manifest V3 updates
-3. Click [here](https://github.com/platima/slashdot-ad-fix/raw/main/ad-shield-fix.user.js) to install the script (Tampermonkey will automatically detect and prompt you to install it)
+3. Click [here](https://github.com/platima/Ad-Shield_Fix/raw/main/ad-shield-fix.user.js) to install the script (Tampermonkey will automatically detect and prompt you to install it)
 4. Click "Install" in the Tampermonkey prompt
 
 ### Manual Installation
@@ -98,7 +98,7 @@ For the script to work with these, you must add more `@match` directives, such a
 10. Ensure your system's date and time are set correctly, as this might affect script execution.
 11. Remove and re-install the extension and the script. This is just in case Tampermonkey is not functioning correctly or the script needs to be updated.
 12. If using a work or school computer, check with your IT department about potential network restrictions.
-13. Lodge an issue [using this template](https://github.com/platima/slashdot-ad-fix/issues/new?labels=bug&template=bug_report.md&title=%5BBUG%5D).
+13. Lodge an issue [using this template](https://github.com/platima/Ad-Shield_Fix/issues/new?labels=bug&template=bug_report.md&title=%5BBUG%5D).
 
 ## 👥 Credits
 - Original concept by [Daniel Perelman](https://github.com/dperelman) (perelman@aweirdimagination.net / https://openuserjs.org/scripts/dperelman)
