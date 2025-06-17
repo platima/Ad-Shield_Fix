@@ -4,10 +4,10 @@
 // @version  2025-01-15
 // @author   Platima
 // @license  MIT
-// @homepage https://github.com/platima/slashdot-ad-fix
-// @source   https://github.com/platima/slashdot-ad-fix/raw/main/ad-shield-fix.user.js
+// @homepage https://github.com/platima/Ad-Shield_Fix
+// @source   https://github.com/platima/Ad-Shield_Fix/raw/main/ad-shield-fix.user.js
 // @icon     https://www.google.com/s2/favicons?sz=64&domain=slashdot.org
-// @supportURL https://github.com/platima/slashdot-ad-fix/issues/new?assignees=platima&labels=bug&projects=&template=bug_report.md&title=%5BBUG%5D
+// @supportURL https://github.com/platima/Ad-Shield_Fix/issues/new?assignees=platima&labels=bug&projects=&template=bug_report.md&title=%5BBUG%5D
 // @grant    unsafeWindow
 // @run-at   document-start
 // @match    *://*.slashdot.org/*
@@ -19,7 +19,7 @@
 (function() {
     'use strict';
     
-    console.log('%cThanks for using Platima\'s Slashdot Ad-Fix Script 🙏 (https://github.com/platima/slashdot-ad-fix)', 'color: green; font-size: 16px; font-weight: bold;');
+    console.log('%cThanks for using Platima\'s Ad-Shield Fix Script 🙏 (https://github.com/platima/Ad-Shield_Fix)', 'color: green; font-size: 16px; font-weight: bold;');
     const script = document.createElement('script');
     script.textContent = `
         (function() {
@@ -138,7 +138,7 @@
                 }
 
                 // Add CSS to ensure iframes can't take up space
-                const styleId = 'slashdot-adfix-style';
+                const styleId = 'ad-shield-fix-style';
                 if (!document.getElementById(styleId)) {
                     const style = document.createElement('style');
                     style.id = styleId;
