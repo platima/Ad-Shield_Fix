@@ -79,6 +79,7 @@ Other domains that have been seen to have this issue related to html-load.com an
 - j-cast.com
 - timesofindia.indiatimes.com (external confirmation)
 - picrew.me (external confirmation)
+- wetter.com (external confirmation)
 
 For the script to work with these, you must add more `@match` directives, such as
 `@match https://j-cast.com/*`
@@ -115,6 +116,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ## 📅 Version History
 
 ### 2025
+- **2025-06-25**
+  - Added wetter.com
 - **2025-06-16**
   - Accepted PR #5 by [@mpql](https://github.com/mpql) to add SourceForge
   - This included renaming the file to make it more generic / applicable
