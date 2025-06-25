@@ -10,10 +10,18 @@
 // @supportURL https://github.com/platima/Ad-Shield_Fix/issues/new?assignees=platima&labels=bug&projects=&template=bug_report.md&title=%5BBUG%5D
 // @grant    unsafeWindow
 // @run-at   document-start
-// @match    *://*.slashdot.org/*
-// @match    https://slashdot.org/*
+// @match    *://*.wetter.com/*
+// @match    *://wetter.com/*
+// @match    *://*.picrew.me/*
+// @match    *://picrew.me/*
+// @match    *://*.indiatimes.com/*
+// @match    *://indiatimes.com/*
+// @match    *://*.j-cast.com/*
+// @match    *://j-cast.com/*
 // @match    *://*.sourceforge.net/*
-// @match    https://sourceforge.net/*
+// @match    *://sourceforge.net/*
+// @match    *://*.slashdot.org/*
+// @match    *://slashdot.org/*
 // ==/UserScript==
 
 (function() {
