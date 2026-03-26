@@ -82,6 +82,7 @@ Other domains that have been seen to have this issue related to html-load.com an
 - timesofindia.indiatimes.com (external confirmation)
 - picrew.me (external confirmation)
 - wetter.com (external confirmation)
+- willyweather.com.au
 
 For the script to work with these, you must add more `@match` directives, such as
 `@match https://j-cast.com/*`
@@ -118,6 +119,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ## 📅 Version History
 
 ### 2025
+- **2026-03-27**
+  - Added willyweather.com.au
 - **2025-11-14**
   - Accepted PR #6 by [@logan9t8](https://github.com/logan9t8) to add flagle and sharktankrecap
   - Update README to suit
