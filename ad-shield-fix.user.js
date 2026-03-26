@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name     Ad-Shield Fix for Chrome (TamperMonkey)
 // @description Use with TamperMonkey in Chrome to prevent the intrusive ad-enfocement that recently appeared on e.g.Slashdot, SourceForge
-// @version  2025-01-15
+// @version  2026-03-27
 // @author   Platima
 // @license  MIT
 // @homepage https://github.com/platima/Ad-Shield_Fix
@@ -24,9 +24,9 @@
 // @match    *://slashdot.org/*
 // @match    *://*.flagle.io/*
 // @match    *://flagle.io/*
-// @match    *://*sharktankrecap.com/*
+// @match    *://*.sharktankrecap.com/*
 // @match    *://sharktankrecap.com/*
-// @match    *://*willyweather.com.au/*
+// @match    *://*.willyweather.com.au/*
 // @match    *://willyweather.com.au/*
 // ==/UserScript==
 
