@@ -26,6 +26,8 @@
 // @match    *://flagle.io/*
 // @match    *://*sharktankrecap.com/*
 // @match    *://sharktankrecap.com/*
+// @match    *://*willyweather.com.au/*
+// @match    *://willyweather.com.au/*
 // ==/UserScript==
 
 (function() {
